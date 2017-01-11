@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_addfield_product_addfield,product_addfield.product_addfield,model_product_addfield_product_addfield,,1,0,0,0

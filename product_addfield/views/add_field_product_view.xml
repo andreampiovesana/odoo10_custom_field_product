@@ -1,0 +1,54 @@
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="add_field_product_tree">
+      <!-- For the tree view and id field (whatever) -->
+      <field name="name">add.field.product.tree</field>
+      <!--  Name field (whatever) -->
+      <field name="model">product.template</field>
+      <!--  Parent object -->
+      <field name="inherit_id" ref="product.product_template_tree_view"/>
+      <!--  Parent View -->
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='type']" position="after">
+          <!--  Name field and Position (after) -->
+          <field name="info"/>
+          <!--  Your new Field -->
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="add_field_product_form">
+      <!--  For the tree view and id field (whatever) -->
+      <field name="name">add.field.product.form</field>
+      <!--  Name field (whatever) -->
+      <field name="model">product.template</field>
+      <!--  Parent object -->
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <!--  Parent View -->
+      <field name="arch" type="xml">        
+        <notebook position="inside">
+          <page string="Custom Fields">
+            <group>
+              <button name="open_custom_filed_form" type="object" string="Custom Field" groups="base.group_sale_manager"/>
+                <group>
+                  <field name="info"/>
+                  <field name="author"/>
+                  <field name="user_id"/>		
+                  <field name="date_deadline" /> 
+                  <field name="is_done"/> 
+                  <field name="desc"/>
+                  <field name="state"/>
+                  <field name="docs"/>
+                  <field name="sequence"/>
+                  <field name="perc_complete"/>
+                  <field name="date_effective"/>
+                  <field name="date_changed"/>
+                  <field name="image"/>
+                </group>
+            </group>
+          </page>        
+        </notebook>
+      </field>
+    </record>
+  </data>
+</openerp>
